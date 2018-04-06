@@ -1,0 +1,43 @@
+include ../mixins/all
+header.header
+	.nav
+		.nav__toggle
+			span
+			span
+			span
+		.nav__items
+			ul.nav__items__links
+				li.nav__items__link
+					+link('Our Whisky','#')
+				li.nav__items__link
+					+link('Whisky Cocktails','#')
+				li.nav__items__link
+					+link('Whisky Knowledge','#')
+				li.nav__items__link
+					+link('Gift Johnnie Walker','#')
+			.nav__items__hotline
+				i.icon-phone
+				| Liên hệ hotline 
+				+link('1900 636934','tel:1900 636934')
+				|  để được tư vấn
+			.nav__items__social
+				+link('facebook','#','').icon-facebook
+				+link('twitter','#','').icon-twitter
+				+link('instagram','#','').icon-instagram
+				+link('youtube','#').icon-youtube
+					span.path1
+					span.path2
+					span.path3
+		.nav__social
+			+link('facebook','#','').icon-facebook
+			+link('twitter','#','').icon-twitter
+			+link('instagram','#','').icon-instagram
+			+link('youtube','#').icon-youtube
+				span.path1
+				span.path2
+				span.path3
+		.nav__hotline
+			i.icon-phone
+			| Liên hệ hotline 
+			+link('1900 636934','tel:1900 636934')
+			|  để được tư vấn

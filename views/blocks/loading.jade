@@ -1,0 +1,31 @@
+include ../mixins/all
+style(type='text/css').
+	.preload__is-showing {
+	display: none;
+	}
+	.preload {
+	position: fixed;
+	top: 0;
+	left: 0;
+	right: 0;
+	bottom: 0;
+	z-index: 99999;
+	background: rgba(0, 0, 0, 0.9);}
+	.preload__logo {
+	position: absolute;
+	top: 50%;
+	left: 50%;
+	transform: translate(-50%, -50%);
+	width: 100px; }
+	@media (min-width: 768px) {
+	.preload__logo {
+	width: auto; } }
+	.preload__logo--text {
+	color: white;
+	font-size: 22px;
+	font-style: italic;
+	opacity: 0.7;
+	}
+
+.preload.js_preload
+	+img('images/johnnie-walker-logo.png').preload__logo

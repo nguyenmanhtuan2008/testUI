@@ -1,0 +1,49 @@
+// 
+// buttons mixin
+// ----------------
+// 
+// This mixin is used for managing your button.
+// 
+// Usage:
+//
+// Define your color button on settings.colors.scss, e.g.
+// 
+// 
+// .btn-purple {
+//   @include btn-theme($purple);
+// }
+// .btn-blue {
+//   @include btn-theme($blue);
+// }
+// .btn-green {
+//   @include btn-theme($green);
+// }
+// .btn-orange {
+//   @include btn-theme($orange);
+// }
+// 
+
+@mixin btn-theme($btn-color) {
+  //border-color: darken($btn-color, 20%);
+  
+  border-color: $btn-color;
+  background-color: $btn-color;
+  border-color: $btn-color;
+  color: $btn-color-text;
+  display: inline-block;
+  transition: all 0.2s;
+
+  &:hover,
+  &:focus {
+    background: darken($btn-color, 6%);
+    box-shadow: 0 0 2px $off-wht;
+    text-decoration: none;
+    color: $color-white;
+  }
+
+  &:active {
+    box-shadow: 0 0 2px $off-wht; 
+    text-decoration: none;
+  }
+}
+

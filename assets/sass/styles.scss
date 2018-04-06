@@ -1,0 +1,203 @@
+// ==========================================================================
+// ICON FONTS
+// ==========================================================================
+@import "base.icon-fonts";
+// ==========================================================================
+// Add mixins
+// ==========================================================================
+
+@import "tools.mixins";
+@import "settings.colors";
+@import "settings.defaults";
+
+// ==========================================================================
+// GENERIC
+// ==========================================================================
+@import "generic.normalize";
+@import "generic.reset";
+// ==========================================================================
+// BASE
+// ==========================================================================
+
+@import "base.type";
+@import "base.headings";
+@import "trumps.helpers";
+@import "base.images";
+
+
+
+
+// ==========================================================================
+// COMPONENTS
+// ==========================================================================
+
+
+@import "external.bootstrap.grid";
+// @import "external.datepicker";
+// @import "external.select";
+
+
+// // Header
+@import "components.header";
+
+// // Footer
+@import "components.footer";
+
+// // Form
+@import "components.form";
+
+// // Content
+
+// @import "external.slick";
+
+@import "components.slider";
+
+// Modal
+// @import "external.magnific-popup";
+
+// Modal
+// @import "components.modal";
+
+// Utility classes
+@import "base.utilities";
+
+* {
+  -moz-osx-font-smoothing: grayscale;
+  -webkit-font-smoothing: antialiased;
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  @include font-weight( $base-font-weight );
+  font-family: $base-font-family;
+  font-size: 100%;
+  line-height: 1.5;
+  background-color: $color-base-bg;
+  color: $color-base-txt;
+  overflow-y: scroll; // [2]
+  min-height: 100%; // [3]
+  -webkit-text-size-adjust: 100%; // [4]
+	  -ms-text-size-adjust: 100%; // [4]
+  -ms-touch-action: manipulation;
+	  touch-action: manipulation;
+   -ms-overflow-style: scrollbar;
+   -webkit-tap-highlight-color: rgba(0,0,0,0);
+}
+
+
+html[lang='ja'] {
+  font-family: $font-japanese;
+  font-size: 32px;
+}
+
+// Emboldened elements.
+html[lang='en-US'] {
+  dt {
+	@include font-weight( semibold );
+  }
+}
+
+body {
+  @include rem(font-size, $font-size-base);
+}
+
+// Horizontal rules.
+hr {
+  border: none;
+  border-bottom: 1px solid $color-gray-ccc;
+  margin-bottom: $base-spacing-unit - 1px;
+}
+
+
+blockquote {
+  margin: 0 2.5em;
+  font-style: italic;
+  color: $color-gray;
+}
+
+abbr {
+  cursor: help;
+}
+
+acronym {
+  text-transform: uppercase;
+  border-bottom: 1px dashed #666;
+  cursor: help;
+}
+
+/* Delete and insert */
+ins, dfn {
+  font-style: italic;
+  text-decoration: none;
+  border-bottom: 1px solid #666;
+}
+
+a {
+  color: $color-base-link;
+  text-decoration: none;
+  transition: 0.2s;
+  cursor: pointer;
+
+  @include attention() {
+	color: $color-brand-1;
+	text-decoration: underline;
+  }
+}
+
+b,
+strong {font-weight: $font-demi;}
+
+
+
+.block {
+	padding: 90px 0;
+	text-align: center;
+  @include media-breakpoint-down(md) {
+    padding: 30px 0;
+  }
+}
+
+.title-block {
+	position: relative;
+  color: $color-brand-1;
+  @include rem(font-size, $font-size-xl);
+  text-transform: uppercase;
+  text-align: center;
+  padding-bottom: 20px;
+  margin: 0 auto 30px;
+  max-width: 80%;
+  &:before {
+      content: '';
+      width: 340px;
+      height: 2px;
+      background: linear-gradient(to right, rgba(230,188,167,1) 0%,rgba(255,228,188,1) 100%); 
+      position: absolute;
+      bottom: 0; left: 50%;
+      transform: translate3d(-50%,0,0);
+  }
+  @include media-breakpoint-down(md) {
+    @include rem(font-size, $font-size-md);
+  }
+}
+
+.content {
+	position: relative;
+	@include rem(font-size, $font-size-sm);
+	max-width: 550px;
+	margin: 0 auto 30px;
+  padding: 0 15px;
+	&__img {
+		margin: 45px 0 30px;
+	}
+	&__steps {
+		dd {
+			margin-bottom: 15px;
+		}
+	}
+}
+
+
+
+

@@ -1,0 +1,35 @@
+{
+  "name": "project-name",
+  "version": "0.0.0",
+  "description": "A Jade/Gulp/Bower/Sass starter kit.",
+  "author": "Tim Nguyen",
+  "private": true,
+  "license": "MIT",
+  "devDependencies": {
+    "browser-sync": "^2.13.1",
+    "del": "^2.2.1",
+    "express": "^4.14.0",
+    "gulp": "^3.9.1",
+    "gulp-autoprefixer": "^3.1.0",
+    "gulp-changed": "^1.3.1",
+    "gulp-if": "^2.0.1",
+    "gulp-imagemin": "^3.4.0",
+    "gulp-jade": "^1.1.0",
+    "gulp-jshint": "^2.1.0",
+    "gulp-notify": "^2.2.0",
+    "gulp-sass": "^2.3.2",
+    "gulp-uglify": "^1.5.4",
+    "gulp-util": "^3.0.7",
+    "jshint": "^2.9.5",
+    "jshint-stylish": "^2.2.0",
+    "morgan": "^1.7.0",
+    "run-sequence": "^1.2.2"
+  },
+  "dependencies": {},
+  "scripts": {
+    "prestart": "npm install",
+    "postinstall": "bower install",
+    "dev": "gulp dev",
+    "prod": "gulp prod"
+  }
+}

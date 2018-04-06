@@ -1,0 +1,127 @@
+.hero {
+	width: 100%; position: relative; overflow: hidden;
+	&__item {
+		@extend %bg;
+		height: 100vh;
+		min-height: 768px;
+		position: relative;
+		@include media-breakpoint-down(md) {
+			background-position: right center;
+			&:before {
+				content: '';
+				position: absolute;
+				width: 100%; height: 100%; top: 0; left: 0;
+				background: rgba(0,0,0,0.5);
+			}
+		}
+	}
+	&__caption {
+		position: absolute;
+		top: 0; left: 0; right: 0; bottom: 0;
+		padding: 100px 0;
+		display: flex; flex-direction: column;
+		align-items: center;
+		justify-content: center;
+		text-align: center;
+	}
+	&__logo {
+		max-width: 230px;
+		margin-bottom: 40px;
+		opacity: 0;
+		img {
+			display: inline-block;
+			width: 100%;
+		}
+		@include media-breakpoint-down(md) {
+			max-width: 150px;
+		}
+	}
+	&__title {
+		@include rem(font-size, $font-size-title);
+		color: $color-white;
+		line-height: 1.25em;
+		margin-bottom: 35px;
+		max-width: 720px;
+		width: 50%;
+		font-family: 'Times';
+		font-weight: 300;
+		line-height: 1.5;
+		opacity: 0;
+		@include media-breakpoint-down(md) {
+			@include rem(font-size, $font-size-lg);
+			width: 100%;
+			padding: 0 15px;
+		}
+	}
+	&__desc {
+		max-width: 750px;
+		width: 50%;
+		font-size: 1em;
+		list-style: 1.5;
+		font-family: 'Times';
+		font-weight: 300;
+		color:  $color-white;
+		margin-bottom: 35px;
+		opacity: 0;
+		@include media-breakpoint-down(md) {
+			width: 100%;
+			padding: 0 15px;
+		}
+	}
+	&__action {
+		opacity: 0;
+	}
+	&__scrolldown {
+		position: absolute;
+		bottom: 5px;
+		cursor: pointer;
+		opacity: 0;
+		span {
+			color: $color-white;
+			@include rem(font-size, $font-size-xs);
+			padding-bottom: 25px;
+			display: inline-block;
+		}
+		.icon-arrow {
+			width: 30px;
+		    height: 15px;
+		    display: block;
+		    background: url(../images/icons/arrow-down.svg);
+		    background-size: cover;
+		    animation: bounce 3s infinite;
+		    position: absolute;
+		    bottom: 0;
+		    left: 50%;
+		    padding-bottom: 0;
+		    margin-left: -15px;
+		}
+	}
+	&--animate {
+		.hero__logo {
+			animation: fadeInUp 0.75s linear 0.25s forwards;	
+		}
+		.hero__title {
+			animation: fadeInLeft 0.75s linear 0.5s forwards;
+		}
+		.hero__desc {
+			animation: fadeInLeft 0.75s linear 0.75s forwards;
+		}
+		.hero__action {
+			animation: fadeInLeft 0.75s linear 1s forwards;
+		}
+		.hero__scrolldown {
+			animation: fadeIn 0.75s linear 1.25s forwards;
+		}
+	}
+}
+@keyframes bounce {
+  	0%, 20%, 50%, 80%, 100% {
+    	transform: translateY(0);
+  	}
+  	40% {
+    	transform: translateY(-10px);
+  	}
+  	60% {
+    	transform: translateY(-5px);
+  	}
+}

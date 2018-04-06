@@ -1,0 +1,23 @@
+mixin search-item-article(title,desc)
+  - if (typeof(title) === 'undefined') title = 'Maybank2u.com - Credit Card Features'
+  - if (typeof(desc) === 'undefined') desc = 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.'
+    .item
+      .desc
+        h4
+          +link(title,'#')
+        p #{desc}
+      .btnWrapper
+        +link('VIEW MORE','#').btn.btn-default.btn-block.btn-view-more
+mixin search-item-card(title,desc,src)
+  - if (typeof(src) === 'undefined') src = 'images/upload/card.jpg'
+  - if (typeof(title) === 'undefined') title = 'Maybank2u.com - Credit Card Features'
+  - if (typeof(desc) === 'undefined') desc = 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.'
+    .item
+      .desc
+        .thumb
+          +img(src,title)
+        h4
+          +link(title,'#')
+        p #{desc}
+      .btnWrapper
+        +link('APPLY NOW','#').btn.btn-primary.btn-block

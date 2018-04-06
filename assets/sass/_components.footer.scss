@@ -1,0 +1,96 @@
+// FOOTER
+// ==========================================================================
+.footer {
+	@include rem(padding, 30px 0);
+	text-align: center;
+	overflow: hidden;
+
+	ul {
+		@extend %list-unstyled;
+	}
+
+    &__title {
+        position: relative;
+        color: $color-brand-1;
+        @include rem(font-size, $font-size-md);
+        text-transform: uppercase;
+        text-align: center;
+        padding-bottom: 20px;
+        margin: 0 auto 50px;
+        max-width: 80%;
+        &:before {
+            content: '';
+            width: 340px;
+            height: 2px;
+            background: linear-gradient(to right, rgba(230,188,167,1) 0%,rgba(255,228,188,1) 100%); 
+            position: absolute;
+            bottom: 0; left: 50%;
+            transform: translate3d(-50%,0,0);
+        }
+    }
+
+    &__nav {
+        max-width: 90%;
+        margin: 0 auto 45px;
+        text-align: center;
+    }
+    
+    &__link {
+        text-decoration: none;
+        text-transform: uppercase;
+        color: $color-black;
+        @include rem(font-size, $font-size-sm);
+        display: inline-block;
+        margin: 0 4% 15px;
+        transition: all 0.5s;
+        &:hover, &:focus {
+            color: $color-brand-2;
+            text-decoration: none;
+        }
+    }
+
+    .copyright {
+        @include rem(font-size, $font-size-xs);
+        color: $color-brand-2;
+        line-height: 1.375em;
+        max-width: 90%;
+        margin: 0 auto;
+        @include media-breakpoint-up(md) {
+            max-width: 70%;
+        }
+    }
+}
+
+.back-to-top {
+	@include rem(font-size, $font-size-md);
+	@include rem(padding, 8px 15px);
+	
+	display: none;
+    position: fixed;
+    right: 10px;
+    bottom: 70px;
+    color: #fff;
+    z-index: 90;
+    background: $color-brand-1;
+    border: 1px solid $color-brand-1;
+    border-radius: 5px;
+    line-height: 20px;
+    transition: .4s;
+    cursor: pointer;
+
+    &:hover,
+    &:focus {
+    	color: $color-brand-1;
+    	background: #fff;
+    }
+
+    @include media-breakpoint-up(lg) {
+    	@include rem(padding, 12px 15px 15px);
+    	bottom: 15px;
+    	right: 15px;
+    }
+
+    @include media-breakpoint-down(sm) {
+    	display: none !important; 
+    }
+}

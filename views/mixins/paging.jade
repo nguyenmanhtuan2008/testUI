@@ -1,0 +1,15 @@
+mixin paging ()
+  .paging
+    +link('prev','javascript:void(0)').prev.action.disable
+      i.icon.icon-previous
+    +link('1','javascript:void(0)').selected
+      span 1
+    +link('2','#')
+      span 2
+    +link('3','#')
+      span 3
+    +link('...','javascript:void(0)').default ...
+    +link('5','#')
+      span 5
+    +link('next','javascript:void(0)').next.action
+      i.icon.icon-go

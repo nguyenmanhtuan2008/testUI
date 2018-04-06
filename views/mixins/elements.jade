@@ -1,0 +1,80 @@
+mixin banner-item(src, thumb, title, desc)
+	- if (typeof(src) === 'undefined') src = 'images/main-banner.jpg'
+	- if (typeof(thumb) === 'undefined') thumb = 'images/thumb-banner.png'
+	- if (typeof(title) === 'undefined') title = 'Let create the <br/> happiness together!'
+	- if (typeof(desc) === 'undefined') desc = 'Let us help you do amazing things! <br/> MB Ageas Life will be your most reliable partner in pursuit of realizing your dreams!'
+		+img(src)
+		.container
+			+img('images/line-banner.png').line
+			.thumb
+				+img(thumb)
+		.caption
+			.container
+				.row
+					.col-md-5.col-md-offset-7
+						h2 !{title}
+						p !{desc}
+
+
+mixin banner-item-small(src, title, desc)
+	- if (typeof(src) === 'undefined') src = 'images/main-banner-small.jpg'
+	- if (typeof(title) === 'undefined') title = 'Children future'
+	- if (typeof(desc) === 'undefined') desc = 'Protecting customers against unforeseen medical costs and helping them access better treatment through advanced medical technology.'
+		+img(src)
+		.caption
+			.container
+				.row
+					.col-md-6.col-md-offset-6
+						h2 !{title}
+						p !{desc}
+
+mixin item-updates(src, cate, title, link)
+	- if (typeof(src) === 'undefined') src = 'images/thumb-item-1.jpg'
+	- if (typeof(cate) === 'undefined') cate = 'PROMOTION'
+	- if (typeof(title) === 'undefined') title = "Vietnam's insurance market posts robust growth in 2016"
+	- if (typeof(link) === 'undefined') link = '#'
+		.advance-item-type
+			.thumb
+				+link-img(src,title,link)
+			.desc
+				p.label-cate !{cate}
+				h4
+					+link(title,link)
+				p
+					+link('Read more',link).link
+
+
+mixin item-updates-highlight(src, cate, title, desc, link)
+	- if (typeof(src) === 'undefined') src = 'images/big-thumb.jpg'
+	- if (typeof(cate) === 'undefined') cate = 'NEW ITEMS | FEB 8, 2017'
+	- if (typeof(title) === 'undefined') title = "Great Eastern posts 11% fall in Q4 profit as insurance earnings drop"
+	- if (typeof(desc) === 'undefined') desc = "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nis."
+	- if (typeof(link) === 'undefined') link = '#'
+		.advance-item-type
+			.thumb
+				+link-img(src,title,link)
+			.wrapper-flex
+				.desc
+					p.label-cate !{cate}
+					h4
+						+link(title,link)
+					p.hidden-md.hidden-lg.hidden-sm !{desc}
+					p
+						+link('Read more',link).link
+				.full-desc.hidden-xs
+					p !{desc}
+
+mixin item-updates-2(src, title, desc, link)
+	- if (typeof(src) === 'undefined') src = 'images/thumb-item-1.jpg'
+	- if (typeof(title) === 'undefined') title = "Great Eastern posts 11% fall in Q4 profit as insurance earnings drop"
+	- if (typeof(desc) === 'undefined') desc = "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nis."
+	- if (typeof(link) === 'undefined') link = '#'
+		.advance-item-type
+			.thumb
+				+link-img(src,title,link)
+			.desc
+				h3
+					+link(title,link)
+				p !{desc}
+				p
+					+link('Read more',link).link

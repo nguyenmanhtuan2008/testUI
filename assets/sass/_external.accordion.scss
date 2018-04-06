@@ -1,0 +1,71 @@
+/*!
+ * jQuery UI Accordion 1.11.4
+ * http://jqueryui.com
+ *
+ * Copyright jQuery Foundation and other contributors
+ * Released under the MIT license.
+ * http://jquery.org/license
+ *
+ * http://api.jqueryui.com/accordion/#theming
+ */
+.ui-accordion {
+ 	border: solid 1px $color-gray-ccc;
+}
+
+.ui-accordion .ui-accordion-header {
+	display: block;
+	cursor: pointer;
+	position: relative;
+	margin: 0;
+	padding: 30px 5%;
+	min-height: 0; /* support: IE7 */
+	font-size: 100%;
+	font-weight: $font-light;
+	text-transform: uppercase;
+	border-bottom: solid 1px rgba($color-black, 0.2);
+
+	&:focus,
+	&:hover {
+		box-shadow: none;
+		outline: none;
+	}
+}
+.ui-accordion .ui-accordion-icons {
+	
+}
+.ui-accordion .ui-accordion-icons .ui-accordion-icons {
+	
+}
+.ui-accordion .ui-accordion-header .ui-accordion-header-icon {
+	position: absolute;
+	right: 5%;
+	top: 50%;
+	margin-top: -10px;
+	text-align: center;
+}
+.ui-accordion .ui-accordion-content {
+	padding: 0;
+	border-top: 0;
+	overflow: auto;
+}
+.ui-accordion-header-active,
+.ui-accordion-content-active {
+	background: #eeebed;
+	box-shadow: 0 none;
+}
+
+.ui-accordion .ui-icon-circle-arrow-e:before,
+.ui-accordion .ui-icon-circle-arrow-s:before {
+	content: "+";
+	font-size: 26px;
+}
+.ui-accordion .ui-accordion-header-active .ui-icon-circle-arrow-e:before,
+.ui-accordion .ui-state-active .ui-icon-circle-arrow-e:before,
+.ui-accordion .ui-accordion-header-active .ui-icon-circle-arrow-s:before,
+.ui-accordion .ui-state-active .ui-icon-circle-arrow-s:before {
+	content: "-";
+	font-size: 26px;
+}
+
+
+

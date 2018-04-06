@@ -1,0 +1,188 @@
+mixin promotion-item(content, title, src)
+  - if (typeof(src) === 'undefined') src = 'images/upload/banner-thumb-1.jpg'
+  - if (typeof(title) === 'undefined') title = '5% Weekend Cashback is BACK!'
+  - if (typeof(content) === 'undefined') content = 'Earn up to RM50 cashback for all your weekend spending'
+    .box-default&attributes(attributes)
+      .thumb(style="background-image: url(#{src})")
+      h3 #{title}
+      .info
+        p #{content}
+      .bottom-box
+        +link('DISCOVER','promotion-detail.html').btn.btn-default.btn-block
+
+mixin oversea-item(content, title, src)
+  - if (typeof(src) === 'undefined') src = 'images/upload/new-york.jpg'
+  - if (typeof(title) === 'undefined') title = '5% Weekend Cashback is BACK!'
+  - if (typeof(content) === 'undefined') content = 'Earn up to RM50 cashback for all your weekend spending'
+    .box-default.height-2
+      .thumb(style="background-image: url(#{src})")
+      h3 #{title}
+      .info
+        p #{content}
+      .bottom-box
+        +link('DISCOVER','oversea-service-detail.html').btn.btn-default.btn-block
+
+mixin announcement-item(time, title, content)
+  - if (typeof(time) === 'undefined') time = '19 SEP 2016'
+  - if (typeof(title) === 'undefined') title = 'Suspension of AS1M transactions via Maybank2u'
+  - if (typeof(content) === 'undefined') content = 'We would like to inform you that Amanah Saham 1Malaysia (AS1M) transactions via Maybank2u will not be available from 19 September 2016 (Tuesday), 5:01pm till 3 October 2016 (Monday), 12:00am.'
+    .box-default.height-3
+      .time #{time}
+      h3.yellow-line #{title}
+      .info
+        p #{content}
+      .bottom-box
+        +link('READ MORE','announcement-detail.html').btn.btn-default.btn-block
+
+
+mixin reward-item(title, src, reward, point1, point2, content)
+  - if (typeof(src) === 'undefined') src = 'images/upload/Asus-Zenfone-3.jpg'
+  - if (typeof(title) === 'undefined') title = 'ASUS ZenFone HD 2'
+  - if (typeof(point1) === 'undefined') point1 = '5,670'
+  - if (typeof(point2) === 'undefined') point2 = '2,500'
+  - if (typeof(reward) === 'undefined') reward = 'ELECTRONICS'
+  - if (typeof(content) === 'undefined') content = 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed viverra arcu enim quellaram.'
+    +link(title,'reward-detail.html').box-default.box-primary
+      .thumb(style="background-image: url(#{src})")
+        span.photo-note #{reward}
+      h3 #{title}
+      .info.light-color
+        p.point
+          span #{point1}
+          | Points (HE1738)
+        p.point
+          span #{point2}
+          | Points + RM 158 (HE1123)
+        p #{content}
+
+mixin treat-item(title, src, treat, content)
+  - if (typeof(src) === 'undefined') src = 'images/upload/Asus-Zenfone-3.jpg'
+  - if (typeof(title) === 'undefined') title = '10% off normal-priced items at Adidas Stores'
+  - if (typeof(treat) === 'undefined') treat = 'DINING'
+  - if (typeof(content) === 'undefined') content = 'Valid till 31st December 2016'
+    .box-default.box-primary.height-1
+      .thumb(style="background-image: url(#{src})")
+        span.photo-note #{treat}
+      h3 #{title}
+      .info
+        p #{content}
+      .bottom-box
+        +link('DISCOVER','treat-detail.html').btn.btn-default.btn-block
+
+mixin carousel-item(src, title, reward, point1, point2)
+  - if (typeof(src) === 'undefined') src = 'images/upload/Asus-Zenfone-3.jpg'
+  - if (typeof(title) === 'undefined') title = 'ASUS ZenFone HD 2'
+  - if (typeof(point1) === 'undefined') point1 = '5,670'
+  - if (typeof(point2) === 'undefined') point2 = '2,500'
+  - if (typeof(reward) === 'undefined') reward = 'REWARDS - ELECTRONICS'
+    section.item
+      .thumb
+        +img(src,title).img-responsive
+      .caption
+        span.photo-note #{reward}
+        h2 #{title}
+        p.point
+          span #{point1}
+          | Points (HE1738)
+        p.point
+          span #{point2}
+          | Points + RM 158 (HE1123)
+        .button-group
+          +link('REDEEM').btn.btn-primary
+          +link('View All','rewards.html').btn.btn-default
+
+mixin carousel-treat-item(src, title, treat, content)
+  - if (typeof(src) === 'undefined') src = 'images/upload/Asus-Zenfone-3.jpg'
+  - if (typeof(title) === 'undefined') title = '20% Off on Food Bills at Ayers Rock Butcher & Grill'
+  - if (typeof(treat) === 'undefined') treat = 'DINING'
+  - if (typeof(content) === 'undefined') content = 'Valid till 31st December 2016'
+    section.item
+      .thumb
+        +img(src,title).img-responsive
+      .caption
+        .inner
+          span.photo-note #{treat}
+          h2 #{title}
+          p.text-medium.white #{content}
+          .button-group
+            +link('DISCOVER','treat-detail-discover.html').btn.btn-primary
+            +link('View All','treats.html').btn.btn-default
+
+mixin item-static(src, note, title, reward)
+  - if (typeof(src) === 'undefined') src = 'images/upload/Asus-Zenfone-3.jpg'
+  - if (typeof(note) === 'undefined') note = ''
+  - if (typeof(title) === 'undefined') title = 'ASUS ZenFone HD 2'
+  - if (typeof(reward) === 'undefined') reward = 'REWARDS - ELECTRONICS'
+    section.product-detail-banner(style="background-image: url(#{src})")
+      .caption
+        .inner
+          span.photo-note #{note}
+          h2 #{title}
+          p.point #{reward}
+mixin item-static-2(src, title, note)
+  - if (typeof(src) === 'undefined') src = 'images/upload/Asus-Zenfone-3.jpg'
+  - if (typeof(title) === 'undefined') title = 'Maybank Phonebanking'
+  - if (typeof(note) === 'undefined') note = 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Cras ultrices mollis dignissim.'
+    section.product-detail-banner(style="background-image: url(#{src})")
+      .caption
+        .inner
+          h2 #{title}
+          p.point #{note}
+          ul.moreinfo
+            li
+              p SERVICE AVAILABILITY
+              p 24/7
+            li
+              p BILL PAYMENT FEE
+              p RM12 / Year
+mixin item-static-3(src, title, note)
+  - if (typeof(src) === 'undefined') src = 'images/upload/Asus-Zenfone-3.jpg'
+  - if (typeof(title) === 'undefined') title = 'Maybank Phonebanking'
+  - if (typeof(note) === 'undefined') note = 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Cras ultrices mollis dignissim.'
+    section.product-detail-banner(style="background-image: url(#{src})")
+      .caption
+        .inner
+          h2 #{title}
+          p.point #{note}
+          ul.download-btn
+            li
+              +link-img('images/app.svg')
+            li
+              +link-img('images/google.svg')
+mixin item-static-4(src, title, note, link)
+  - if (typeof(src) === 'undefined') src = 'images/upload/Asus-Zenfone-3.jpg'
+  - if (typeof(title) === 'undefined') title = 'Maybank Phonebanking'
+  - if (typeof(note) === 'undefined') note = 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Cras ultrices mollis dignissim.'
+  - if (typeof(link) === 'undefined') link = '#'
+    section.product-detail-banner(style="background-image: url(#{src})")
+      .caption
+        .inner
+          h2 #{title}
+          p.point #{note}
+          p.btn-block
+            +link('VIEW OUTLETS', 'locate-outlet.html').btn.btn-default
+
+mixin item-static-5(src, title, note, stepper)
+  - if (typeof(src) === 'undefined') src = 'images/upload/Asus-Zenfone-3.jpg'
+  - if (typeof(title) === 'undefined') title = 'Maybank Phonebanking'
+  - if (typeof(note) === 'undefined') note = 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Cras ultrices mollis dignissim.'  
+    section.product-detail-banner(style="background-image: url(#{src})")
+      .caption.center-full
+        .inner
+          h2 #{title}
+          p.point #{note}
+          p.stepper
+            for item in stepper
+              span(class=item)
+mixin item-static-6(src, title, note)
+  - if (typeof(src) === 'undefined') src = 'images/upload/Asus-Zenfone-3.jpg'
+  - if (typeof(title) === 'undefined') title = 'Maybank Phonebanking'
+  - if (typeof(note) === 'undefined') note = 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Cras ultrices mollis dignissim.'  
+    section.product-detail-banner(style="background-image: url(#{src})")
+      .caption.center-full
+        .inner
+          h2 #{title}
+          p.point #{note}
+          
+
+

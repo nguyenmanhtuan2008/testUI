@@ -1,0 +1,68 @@
+// Helpers
+// ==========================================================================
+
+// Wordpress alignment css classes
+.alignleft {
+	display: inline;
+	float: left;
+	margin-right: 1.5em;
+}
+.alignright {
+	display: inline;
+	float: right;
+	margin-left: 1.5em;
+}
+.aligncenter {
+	clear: both;
+	display: block;
+	margin: 0 auto;
+}
+
+.center {
+  text-align: center;
+}
+.upper {
+  text-transform: uppercase;
+}
+
+@-webkit-keyframes blink {
+    0% {
+	    opacity: .2;
+	}
+	20% {
+	    opacity: 1;
+	}
+	100% {
+	    opacity: .2;
+	}
+}
+
+@keyframes blink {
+    0% {
+	    opacity: .2;
+	}
+	20% {
+	    opacity: 1;
+	}
+	100% {
+	    opacity: .2;
+	}
+}
+
+@-webkit-keyframes fadeOut {
+    0% {
+        opacity: 1;
+    }
+    100% {
+        opacity: 0;
+    }
+}
+
+@keyframes fadeOut {
+    0% {
+        opacity: 1;
+    }
+    100% {
+        opacity: 0;
+    }
+}

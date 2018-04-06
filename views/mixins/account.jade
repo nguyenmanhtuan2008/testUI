@@ -1,0 +1,105 @@
+mixin account-item(id, url, src, photoNote, content, r1, r1Info, r2,r2Info)
+  - if (typeof(src) === 'undefined') src = 'images/upload/Asus-Zenfone-3.jpg'
+  - if (typeof(photoNote) === 'undefined') photoNote = 'Basic Savings Account'
+  - if (typeof(content) === 'undefined') content = 'Basic Savings Account'
+  - if (typeof(r1) === 'undefined') r1 = 'RM 50'
+    .box-default.box-primary.account-box
+      .thumb(style="background-image: url(#{src})")
+        span.photo-note #{photoNote}
+      .info
+        p #{content}
+      +link('DISCOVER',url).btn.btn-default.btn-block
+      .info-1
+        h4.text-small MINIMUM DEPOSIT
+        dl
+          dt #{r1}
+          dd #{r1Info}
+        dl
+          dt #{r2}
+          dd #{r2Info}
+
+      +link('TALK TO US').btn.btn-primary.btn-block
+      +link('ADD TO COMPARE')(data-account-title=photoNote).btn.btn-default.btn-block.icon-add-new&attributes(attributes)
+      +input(false, false, 'hidden')
+
+mixin basic-account-item(url, src,  photoNote, content, r1, r1Info)
+  - if (typeof(url) === 'undefined') url = 'basic-saving-account.html'
+  - if (typeof(src) === 'undefined') src = 'images/upload/Asus-Zenfone-3.jpg'
+  - if (typeof(photoNote) === 'undefined') photoNote = 'Basic Savings Account'
+  - if (typeof(content) === 'undefined') content = 'A no-frills savings account with no service or maintenance charge'
+  - if (typeof(r1) === 'undefined') r1 = 'RM 50'
+    .box-default.box-primary.account-box
+      .thumb(style="background-image: url(#{src})")
+        span.photo-note #{photoNote}
+      .info
+        p #{content}
+      .info-2
+        h4.text-small MINIMUM DEPOSIT
+        dl
+          dt #{r1}
+          dd #{r1Info}
+      +link('DISCOVER', url).btn.btn-default.btn-block
+
+mixin card-item(url, src, title, content, r1, r1Info, r2,r2Info)
+  - if (typeof(src) === 'undefined') src = 'images/upload/cards/card-1.png'
+  - if (typeof(title) === 'undefined') title = 'Maybank ASPIRE Visa Platinum Debit Card'
+  - if (typeof(content) === 'undefined') content = 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum congue tortor vitae purus dapibus pulvinar.'
+  - if (typeof(r1) === 'undefined') r1 = 'N/A'
+    .box-default.box-primary.account-box
+      .thumb
+        +img(src, title)
+      h3 #{title}
+      .info
+
+        p #{content}
+      +link('DISCOVER',url).btn.btn-default.btn-block
+      .info-1
+        h4.text-small MINIMUM ANNUAL INCOME
+        dl
+          dt #{r1}
+          dd #{r1Info}
+        dl
+          dt #{r2}
+          dd #{r2Info}
+      +link('TALK TO US').btn.btn-primary.btn-block
+      +link('ADD TO COMPARE')(data-account-photo=src).btn.btn-default.btn-block.icon-add-new&attributes(attributes)
+      +input(false, false, 'hidden')
+
+mixin credit-card-item(url, src, title, content, r1, r1Info, r2,r2Info)
+  - if (typeof(src) === 'undefined') src = 'images/upload/cards/card-1.png'
+  - if (typeof(title) === 'undefined') title = 'American Express Gold Credit Card'
+  - if (typeof(content) === 'undefined') content = 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum congue tortor vitae purus dapibus pulvinar.'
+  - if (typeof(r1) === 'undefined') r1 = 'N/A'
+    .box-default.box-primary.account-box
+      .thumb
+        +img(src, title)
+      h3 #{title}
+      .info
+
+        p #{content}
+      +link('DISCOVER',url).btn.btn-default.btn-block
+      .info-1
+        h4.text-small MINIMUM ANNUAL INCOME
+        dl
+          dt #{r1}
+          dd #{r1Info}
+        dl
+          dt #{r2}
+          dd #{r2Info}
+      +link('APPLY NOW').btn.btn-primary.btn-block
+      +link('ADD TO COMPARE')(data-account-photo=src).btn.btn-default.btn-block.icon-add-new&attributes(attributes)
+      +input(false, false, 'hidden')
+
+
+mixin basic-card-item(url, src, title, content)
+  - if (typeof(url) === 'undefined') url = 'debit-card-detail.html'
+  - if (typeof(src) === 'undefined') src = 'images/upload/cards/card-1.png'
+  - if (typeof(title) === 'undefined') title = 'Maybank ASPIRE Visa Platinum Debit Card'
+  - if (typeof(content) === 'undefined') content = 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum congue tortor vitae purus dapibus pulvinar.'
+    .box-default.box-primary.account-box
+      .thumb
+        +img(src, title)
+      h3 #{title}
+      .info
+        p #{content}
+      +link('DISCOVER', url).btn.btn-default.btn-block
