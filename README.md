@@ -11,7 +11,7 @@ $ npm install
 
 Start tasks for development
 ```bash
-$ npm run dev
+$ gulp dev
 ```
 
 Open your web browser and navigate to [http://localhost:3000](http://localhost:3000)
